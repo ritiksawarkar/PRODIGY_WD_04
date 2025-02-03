@@ -1,0 +1,273 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5em 0;
+    position: sticky;
+    /* Makes the header sticky */
+    top: 0;
+    /* Ensures the header stays at the top of the viewport */
+    z-index: 1000;
+    /* Keeps it above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Optional: Add a shadow for better visibility */
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 0.5em 0;
+}
+
+nav {
+    position: relative;
+}
+
+.menu-icon {
+    display: none;
+    /* Hidden by default */
+    font-size: 1.5em;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+    padding: 0.5em;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    position: relative;
+    /* Needed for the underline effect */
+    padding-bottom: 4px;
+    /* Space for the underline */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    /* Initially hidden */
+    height: 2px;
+    /* Thickness of the underline */
+    background-color: white;
+    /* Color of the underline */
+    transition: width 0.3s ease;
+    /* Smooth animation */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    /* Full-width underline on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        /* Show menu icon on small screens */
+        position: absolute;
+        right: 15px;
+        top: -90px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide navigation links by default */
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+        width: 300px;
+        /* Show navigation links when toggled */
+    }
+}
+
+section {
+    padding: 2em;
+    margin: 1em auto;
+    max-width: 800px;
+    border-bottom: 1px solid #ddd;
+}
+
+section img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills ul li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-left: 4px solid #333;
+}
+
+.projects img,
+.achievements img,
+.certificates img {
+    max-width: 100%;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer a {
+    color: #ffda00;
+    text-decoration: none;
+}
+
+/* General Styling for Container */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.open-source-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 1em;
+}
+
+.open-source-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.open-source-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Styling for Project List */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    width: 300px;
+    /* Fixed width for large screens */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
+        /* Full width for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .open-source-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .open-source-section p {
+        font-size: 0.9rem;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+
+    .project-card p {
+        font-size: 0.8rem;
+    }
+
+    .project-card a {
+        font-size: 0.8rem;
+    }
+}
